@@ -1,0 +1,7 @@
+[build]
+  base = "frontend/expense-tracker"
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  VITE_BACKEND_URL = "https://expense-tracker-6i74.onrender.com"
