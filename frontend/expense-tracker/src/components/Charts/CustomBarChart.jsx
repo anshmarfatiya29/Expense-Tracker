@@ -12,7 +12,7 @@ import {
 } from "recharts" ;
 
 
-const CustomBarChart = ({ data}) => {
+const CustomBarChart = ({ data }) => {
 
     // Function to alternate colors
     const getBarColor = (index) => {
@@ -21,9 +21,10 @@ const CustomBarChart = ({ data}) => {
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
+            console.log("Tooltip Payload:", payload[0]); 
             return (
                 <div className="bg-white shadow-md rounded-lg p-2 border border-gray-300">
-                    <p className="text-xs font-semibold text-purple-800 mb-1">{payload[0].payload.category}</p>
+                    <p className="text-xs font-semibold text-purple-800 mb-1">{payload[0].payload.source}</p>
                     <p className="text-sm text-gray-600">
                         Amount: <span className="text-sm font-medium text-gray-900">${payload[0].payload.amount}</span>
                     </p>
@@ -39,7 +40,7 @@ const CustomBarChart = ({ data}) => {
             <BarChart data={data}>
                 <CartesianGrid stroke="none" />
 
-                <XAxis dataKey="category" tick={{ fontSize: 12, fill: "#555"}} stroke="none" />
+                <XAxis dataKey="month" tick={{ fontSize: 12, fill: "#555"}} stroke="none" />
                 <YAxis tick={{ fontSize: 12, fill: "#555" }} stroke="none" />
                 <Tooltip content={CustomTooltip} />
 
@@ -51,7 +52,7 @@ const CustomBarChart = ({ data}) => {
                     activeStyle={{ fill: "green" }}
                     >
                         {data.map((entry, index) => (
-                            <Cell key={index} fill={getBarColor(index)} />
+                            <Cell key={`cell-${index}`} fill={getBarColor(index)} />
                         ))}
                     </Bar>
             </BarChart>
