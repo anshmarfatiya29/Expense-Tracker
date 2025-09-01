@@ -62,7 +62,7 @@ const handleLogin = async (e) => {
           Please enter your details to log in
         </p>
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} >
             <Input
             value={email}
             onChange={({ target }) => setEmail(target.value)}

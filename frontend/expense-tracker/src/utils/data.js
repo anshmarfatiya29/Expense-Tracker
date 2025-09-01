@@ -3,6 +3,7 @@ import {
     LuHandCoins,
     LuWalletMinimal,
     LuLogOut,
+    LuBrainCircuit
 } from "react-icons/lu";
 
 export const SIDE_MANU_DATA = [
@@ -24,6 +25,21 @@ export const SIDE_MANU_DATA = [
         icon: LuHandCoins,
         path: "/expense",
     },
+    {
+        id: "04", // 👈 Give it a new ID
+        label: "AI Suggestions",
+        icon: LuBrainCircuit,
+        path: "/suggestions",
+    },
+    
+
+// {
+//     id: "04",
+//     label: "ConnectBank",
+//     icon: LuBanknote,
+//     path: "/connect-bank",
+// },
+
     {
         id: "06",
         label: "Logout",

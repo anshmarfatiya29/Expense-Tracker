@@ -1,4 +1,4 @@
-export const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+export const BASE_URL ="http://localhost:8000";
 
 // utils/apiPaths.js
 export const API_PATHS = {
@@ -22,4 +22,9 @@ export const API_PATHS = {
         DELETE_EXPENSE: (expenseID) => `/api/v1/expense/${expenseID}`,
         DOWNLOAD_EXPENSE: `/api/v1/expense/downloadexcel`,
     },
+    SUGGESTIONS: { // 👈 Add this new object
+        GET_BUDGET: "/api/v1/suggestions/budget",
+        GET_INCOME_GROWTH: "/api/v1/suggestions/income-growth",
+    },
+    
 };
